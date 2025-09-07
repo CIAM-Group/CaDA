@@ -50,9 +50,9 @@ class PromptNet(nn.Module):
             nn.LayerNorm(output_dim),
             linear_layer(output_dim,output_dim),
             nn.ReLU(),
-            linear_layer(output_dim, output_dim//4), # task embedding
-            nn.LayerNorm(output_dim//4),
-            linear_layer(output_dim//4, 5*output_dim),
+            linear_layer(output_dim, output_dim//8), # task embedding
+            nn.LayerNorm(output_dim//8),
+            linear_layer(output_dim//8, 5*output_dim),
         )
 
     def forward(self, td):
@@ -436,6 +436,7 @@ class RMSNorm(nn.Module):
     def forward(self, x):
         output = self._norm(x.float()).type_as(x)
         return output * self.weight
+
 
 
 
