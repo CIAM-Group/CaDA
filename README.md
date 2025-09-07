@@ -50,7 +50,13 @@ CaDA
 
 4. **Prepare environment**:
 
-The project is developed with Python 3.8.15, and the environment dependencies are specified in `requirements.txt`.
+The project is developed with Python 3.8.15. Key packages include:
+```
+torch     2.0.1
+torchrl   0.1.1
+rl4co     0.2.0
+```
+The complete list of dependencies can be found in `requirements.txt`.
 
 
 ## Training and Testing
