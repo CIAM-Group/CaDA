@@ -48,6 +48,11 @@ CaDA
 └── utils
 ```
 
+4. **Prepare environment**:
+
+The project is developed with Python 3.8.15, and the environment dependencies are specified in `requirements.txt`.
+
+
 ## Training and Testing
 
 For detailed instructions on training and testing the model, please refer to the README files inside the `50` and `100` directories.
