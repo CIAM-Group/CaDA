@@ -66,6 +66,7 @@ class VRPModel(nn.Module):
         self.decoder = VRP_Decoder(**args.model_params)
         self.encoded_nodes = None  # (batch, problem+1, EMBEDDING_DIM)
         self.now_p_type = None
+        self.prompt_net = PromptNet(args)
 
     @staticmethod
     def greedy(logprobs, mask=None):
@@ -435,3 +436,4 @@ class RMSNorm(nn.Module):
     def forward(self, x):
         output = self._norm(x.float()).type_as(x)
         return output * self.weight
+
