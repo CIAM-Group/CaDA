@@ -93,6 +93,7 @@ class VRPTrainer:
                 random.setstate(checkpoint['rng_state_dict']['random.state'])
             else:
                 self.env.__setstate__(checkpoint['env_state_dict'], set_seed=False)
+            self.env.data_dir = args.env['data_dir']
         # ddp model
         if args.ddp:
             torch.distributed.barrier()
@@ -484,3 +485,4 @@ class VRPTrainer:
                 all_dataset_dict_[key] = value
         df = pd.DataFrame(all_dataset_dict_)
         df.to_excel(f'{args.result_dir}/cvrplib.xlsx', index=False, engine='openpyxl')
+
