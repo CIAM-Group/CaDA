@@ -55,6 +55,7 @@ The project is developed with Python 3.8.15. Key packages include:
 torch     2.0.1
 torchrl   0.1.1
 rl4co     0.2.0
+tensordict                   0.1.2
 ```
 The complete list of dependencies can be found in `requirements.txt`.
 
