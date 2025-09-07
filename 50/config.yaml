@@ -9,7 +9,7 @@ model_params:
    'ffd': 'siglu' 
    'norm_type': 'rms' 
    'use_sparse': 'topk'   # relu topk entmax15 sparsemax a-entmax False 
-
+   'p_num': 5
 
 optimizer_params:
     'optimizer':
@@ -114,3 +114,4 @@ all_test_distribution : [
   "uniform"
 
 ]
+
