@@ -112,7 +112,7 @@ class VRPModel(nn.Module):
         # Main decoding: loop until all sequences are done
         step = 0
         while not td["done"].all():
-            logprobs, mask = self.decoder(td, cache, num_starts, None)
+            logprobs, mask = self.decoder(td, cache, num_starts)
             # select
             if self.training:
                 select = VRPModel.sampling(logprobs, args.log, mask)
@@ -233,7 +233,6 @@ class EncoderLayer(nn.Module):
         #
         out_concat = multi_head_attention(
             q, k, v, 
-            p_num = self.model_params['p_num'] if self.model_params['use_sparse'] == 'topk' else 0, 
             sparse=self.model_params['use_sparse'], 
             attn_weight=attn_weight,
             ) # (batch, problem, head_num*qkv_dim)
@@ -436,4 +435,5 @@ class RMSNorm(nn.Module):
     def forward(self, x):
         output = self._norm(x.float()).type_as(x)
         return output * self.weight
+
 
