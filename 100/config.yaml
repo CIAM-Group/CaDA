@@ -33,7 +33,7 @@ env:
   test_interval: 100 
   test_episodes: 1000 # need set to 1000
   test_batch_size: 200 # will be reset in env.py, function get_dataloader 
-  data_dir: '../data'
+  data_dir: '../data/synthetic_data'
   test_size_idx: [ # will be reset in run.py
       0, # 50
       # 1, # 100
@@ -132,4 +132,5 @@ all_test_distribution : [
   "compression",
   "grid",
   "uniform"
+
 ]
