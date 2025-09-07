@@ -76,6 +76,7 @@ class VRPTrainer:
                 random.setstate(checkpoint['rng_state_dict']['random.state'])
             else:
                 self.env.__setstate__(checkpoint['env_state_dict'], set_seed=False)
+            self.env.data_dir = args.env['data_dir']
         # ddp model
         if args.ddp:
             torch.distributed.barrier()
@@ -306,4 +307,5 @@ class VRPTrainer:
                 for sheet_name_, sheet_data_ in sheet_.items():
                     pd.DataFrame(sheet_data_).to_excel(writer, sheet_name=str(sheet_name_))
                 writer.close()
+
         if args.ddp: torch.distributed.barrier()
