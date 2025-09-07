@@ -27,18 +27,24 @@ CaDA
 
 3. **Download checkpoints**:
 
+* Create 'result' folder manually under 'CaDA/50' and 'CaDA/100'.
 * Download `checkpoint.zip` from [Hugging Face](https://huggingface.co/datasets/Goodyee/CaDA/tree/main).
-* Unzip `checkpoint.zip`. It contains two folders named `50` and `100`. Move their contents into the project directory as shown:
+* Unzip `checkpoint.zip`. It will produce two directories: `50` and `100`.
+  * Inside `50`, you will find a folder named `2024-1111-1139`.
+  * Inside `100`, you will find a folder named `2024-1121-1355`.
+* Organize them into the project directory as follows:
 
 ```
 CaDA
 ├── data
+│   ├── lib_data
+│   └── synthetic_data
 ├── 50
 │   └── result
-│       └── (folders from checkpoint/50/)
+│       └── 2024-1111-1139
 ├── 100
 │   └── result
-│       └── (folders from checkpoint/100/)
+│       └── 2024-1121-1355
 └── utils
 ```
 
