@@ -18,6 +18,8 @@ git clone https://github.com/CIAM-Group/CaDA.git
 ```
 CaDA
 ├── data
+│   ├── lib_data
+│   └── synthetic_data
 ├── 50
 ├── 100
 └── utils
