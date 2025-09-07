@@ -195,8 +195,9 @@ class VRP_Encoder(nn.Module):
                 out2_ = out2[:,:n+1] + self.layers2combine[i](out)
                 out2_ = torch.cat((out2_, out2[:,-self.p_num:]),dim=1)
                 out2 = out2_
-            return out[:,:n+1] # (batch, problem+1, embedding)
-    
+        return out[:,:n+1] # (batch, problem+1, embedding)
+
+
 class EncoderLayer(nn.Module):
     def __init__(self, **model_params):
         super().__init__()
@@ -435,5 +436,6 @@ class RMSNorm(nn.Module):
     def forward(self, x):
         output = self._norm(x.float()).type_as(x)
         return output * self.weight
+
 
 
